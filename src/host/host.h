@@ -4,7 +4,7 @@
 #include <atomic>
 #include <string>
 #include <vector>
-#include <wine/windows/windows.h>
+#include <windows.h>
 #include "common/config.h"
 #include "common/dataport.h"
 #include "common/event.h"
