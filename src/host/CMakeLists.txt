@@ -65,12 +65,15 @@ add_executable(${TARGET_NAME}-32 WIN32 ${SOURCES})
 
 set_target_properties(${TARGET_NAME}-32 PROPERTIES
 	COMPILE_FLAGS "-m32"
-	LINK_FLAGS "-m32"
+	LINK_FLAGS "-m32 -nodefaultlibs -L /opt/wine-staging/lib"
 )
 
 # Link with libraries
 target_link_libraries(${TARGET_NAME}-32
 	${CMAKE_THREAD_LIBS_INIT}
+	user32
+	kernel32
+	/opt/wine-staging/lib/wine/libwinecrt0.a
 )
 
 install(PROGRAMS
